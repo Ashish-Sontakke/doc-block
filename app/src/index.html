@@ -2,14 +2,170 @@
 <html>
   <head>
     <title>DocBlock</title>
+
+    <link rel="stylesheet" href="index.css"/>
   </head>
   <style>
-    input {
-      display: block;
-      margin-bottom: 12px;
+    .navbar-default{
+      background-color: #ccc !important;
+      border-color: #ccc !important;
+      margin-top: 32px;
+    }
+    .nav_menu {
+      font-weight: 400;
+      color: black !important;
+      font-size: 20px;
+    }
+    .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+        background-color: #fff !important;
+        border-radius: 30px;
+    }
+    .first_main_div {
+      background-color: #ccc;
+      height: 900px;
+    }
+    .second_main_div{
+      height: 100%;
+      padding: 20px;
+    }
+    .form_border {
+      border-style: solid;
+      margin-top: 16px;
+      padding: 30px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: black;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Add padding to containers */
+    .container {
+      padding: 16px;
+      background-color: white;
+    }
+
+    /* Full-width input fields */
+    input[type=text], input[type=password] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    input[type=text]:focus, input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    /* Overwrite default styles of hr */
+    hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+    }
+
+    /* Set a style for the submit button */
+    .registerbtn {
+      background-color: #04AA6D;
+      color: white;
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 30px;
+      opacity: 0.7;
+    }
+
+    .registerbtn:hover {
+      opacity: 1;
+    }
+
+    /* Add a blue text color to links */
+    a {
+      color: dodgerblue;
+    }
+
+    /* Set a grey background color and center the text of the "sign in" section */
+    .signin {
+      background-color: #f1f1f1;
+      text-align: center;
     }
   </style>
   <body>
+    <div class="container">
+      <div class="row">
+        <!-- First Column -->
+        <div class="col-lg-3 first_main_div">
+          <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <ul class="nav navbar-nav">
+                <li><a class="nav_menu" href="#">Dashboard</a></li><br/>
+                <li class="active"><a class="nav_menu" href="#">Create Certificates</a></li><br/>
+                <li><a class="nav_menu" href="#">Verify Certificates</a></li><br/>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+        <!-- Second Column -->
+        <div class="col-lg-6 second_main_div">
+          <div class="form_border">
+            <form class="certificate_form">
+              <!-- action="/action_page.php" -->
+                <h3 class="text-center">Certificate Form</h3>
+                <p class="text-center">Please fill the below details to generate certificate.</p>
+                <hr>
+
+                <label for="name"><b>Name</b></label>
+                <input type="text" placeholder="Enter Name" name="name" id="name" required>
+
+                <label for="school"><b>School / College</b></label>
+                <input type="text" placeholder="Enter School / College" name="school" id="school" required>
+
+                <label for="id_number"><b>ID Number</b></label>
+                <input type="text" placeholder="Enter ID Number" name="id_number" id="id_number" required>
+
+                <label for="rank"><b>Rank</b></label>
+                <input type="text" placeholder="Enter Rank" name="rank" id="rank" required>
+
+                <label for="candidate_photo"><b>Candidate Photo</b></label>
+                <input type="file" name="candidate_photo" id="candidate_photo" required>
+                <hr>
+                <p>By generating an certificate you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+                <button type="submit" class="registerbtn">Generate Certificate</button>
+
+              <!-- <div class="container signin">
+                <p>Already have an account? <a href="#">Sign in</a>.</p>
+              </div> -->
+            </form>
+          </div>
+        </div>
+
+        <!-- Third Column -->
+        <div class="col-lg-3" style="height: 100%;">
+          <!-- <p> Column 3</p> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
     <script src="index.js"></script>
+
   </body>
 </html>

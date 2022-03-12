@@ -8,12 +8,25 @@ const App = {
     const { web3 } = this;
 
     try {
+      // get contract instance
+      const networkId = await web3.eth.net.getId();
+      const deployedNetwork = SimpleStorage.networks[networkId];
+      this.meta = new web3.eth.Contract(
+        SimpleStorage.abi,
+        '0x062dAD8F44C29d540c383fB17dA69E760BAEAe08',
+      );
+
       // get accounts
       const accounts = await web3.eth.getAccounts();
       this.account = accounts[0];
+
+      this.loadAccount();
     } catch (error) {
       console.error("Could not connect to contract or chain.");
     }
+  },
+  loadAccount: async function() {
+    console.log("LLLLLLLLLLLLL", this.account);
   },
 };
 
